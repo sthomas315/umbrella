@@ -18,5 +18,7 @@ coordinates_long = parsed_response.fetch("results").at(0).fetch("geometry").fetc
 pirate_maps_url = "https://api.pirateweather.net/forecast/#{pirate_weather_api_key}/#{coordinates_lat},#{coordinates_long}"
 raw_pirate = HTTP.get(pirate_maps_url)
 parsed_response_1 = JSON.parse(raw_pirate)
-pp parsed_response_1
-pp parsed_response_1.keys
+#pp parsed_response_1
+#pp parsed_response_1.keys
+current_temperature= parsed_response_1.fetch("currently").fetch("temperature") 
+pp "It is currently #{current_temperature} degrees(F) in #{location}"
